@@ -1,10 +1,12 @@
 pipeline {
     agent any 
     stages {
-       stage('running playbook'){
+       stage('running playbook') {
          steps {
              sh '''
                ansible-playbook -i inventory.ini playbook.yml
                 '''
              }
           }
+    }
+}
