@@ -1,0 +1,20 @@
+- name: deploying a java web application
+  hosts: target
+  become: true 
+  tasks:
+    - name: install maven and git
+      yum:
+        name: "{{item}}"
+        state: present
+      loop:
+       - git
+       - maven
+    -  name:  cloning git repo
+       git:
+         repo: "https://github.com/AndriyKalashnykov/tomcat-root-war.git"
+         dest: /home/Amulya_Ravula/
+    -  name: creating a war file
+       command: mvn clean install
+       args:
+         chdir: /tomcat-root-war
+        
