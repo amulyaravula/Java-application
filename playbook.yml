@@ -13,8 +13,4 @@
        git:
          repo: "https://github.com/AndriyKalashnykov/tomcat-root-war.git"
          dest: /home/Amulya_Ravula/
-    -  name: creating a war file
-       command: mvn clean install
-       args:
-         chdir: /tomcat-root-war
-        
+
