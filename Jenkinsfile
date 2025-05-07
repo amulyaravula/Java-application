@@ -13,7 +13,7 @@ pipeline {
                 git url: 'https://github.com/AndriyKalashnykov/tomcat-root-war'
               }
     	}
-        stage ('Build) {
+        stage ('Build') {
                steps {
                    sh '''
                    cd tomcat-root-war
