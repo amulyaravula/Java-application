@@ -1,13 +1,6 @@
 pipeline {
-    agent {label 'instance-java'}
+    agent any
     stages {
-       stage('running playbook') {
-         steps {
-             sh '''
-               ansible-playbook -i inventory.ini playbook.yml
-                '''
-             }
-          }
     	stage('creating war file'){
               steps {
                  sh '''
@@ -15,13 +8,6 @@ pipeline {
                     '''
                     }
                   }
-             stage(' changing the root directory'){
-               steps {
-                  sh '''
-                      cp ./target/ROOT.war  opt/tomcat/webapps/ROOT.war
-                     '''
-                     }
-                 }
               }
     	}
 
