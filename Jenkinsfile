@@ -20,6 +20,12 @@ pipeline {
                    '''
                }
                }
+        stage('running playbook'){
+            steps {
+                sh '''
+                ansible-playbook -i inventory.ini playbook.yml
+               }
+               }
                }
                }
 
