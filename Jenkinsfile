@@ -16,7 +16,6 @@ pipeline {
         stage ('Build') {
                steps {
                    sh '''
-                   cd tomcat-root-war
                    mvn clean install
                    '''
                }
