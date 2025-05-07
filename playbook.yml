@@ -2,15 +2,7 @@
   hosts: target
   become: true 
   tasks:
-    - name: install maven and git
-      yum:
-        name: "{{item}}"
-        state: present
-      loop:
-       - git
-       - maven
-    -  name:  cloning git repo
-       git:
-         repo: "https://github.com/AndriyKalashnykov/tomcat-root-war.git"
-         dest: /home/Amulya_Ravula/
-
+    - name: copying the path
+      copy:
+         src: ./target/ROOT.war
+         dest: /home/Amulya_Ravula/opt/tomcat/webapps/ROOT.war
