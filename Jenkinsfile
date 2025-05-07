@@ -23,7 +23,7 @@ pipeline {
         stage('running playbook'){
             steps {
                 sh '''
-                ansible-playbook -i inventory.ini playbook.yml
+                ansible-playbook -i /var/lib/jenkins/inventory.ini /var/lib/jenkins/playbook.yml
                 '''
                }
                }
