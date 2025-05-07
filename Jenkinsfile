@@ -1,5 +1,5 @@
 pipeline {
-    agent {label: instance-java}
+    agent {label 'instance-java'}
     stages {
        stage('running playbook') {
          steps {
