@@ -5,10 +5,22 @@ pipeline {
               steps {
                  sh '''
                       sudo yum install -y  maven
-                      mvn clean install
                     '''
                     }
                   }
+        stage('clone repo'){
+            steps {
+                git url: 'https://github.com/AndriyKalashnykov/tomcat-root-war'
               }
     	}
+        stage ('Build) {
+               steps {
+                   sh '''
+                   cd tomcat-root-war
+                   mvn clean install
+                   '''
+               }
+               }
+               }
+               }
 
