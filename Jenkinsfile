@@ -4,7 +4,7 @@ pipeline {
     	stage('creating war file'){
               steps {
                  sh '''
-                      yum install mvn
+                      sudo yum install mvn
                       mvn clean install
                     '''
                     }
