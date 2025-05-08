@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-    	stage('creating war file'){
+    	stage('installing maven'){
               steps {
                  sh '''
                       sudo yum install -y  maven
@@ -19,14 +19,14 @@ pipeline {
                    mvn clean install
                    '''
                }
-               }
+            }
         stage('running playbook'){
             steps {
                 sh '''
                 ansible-playbook -i /var/lib/jenkins/inventory.ini /var/lib/jenkins/playbook.yml
                 '''
                }
-               }
-               }
-               }
+           }
+         }
+       } 
 
